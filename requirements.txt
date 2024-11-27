@@ -1,0 +1,20 @@
+# This file may be used to create an environment using:
+# $ conda create --name <env> --file <this file>
+# platform: linux-64
+accelerate=0.33.0
+deepspeed=0.14.5
+gradio=3.39.0
+huggingface-hub=0.24.5
+mpi4py=4.0.0
+numpy=1.24.2
+openai=0.27.8
+opencv-python=4.8.0.74
+packaging=24.1
+pandas=2.2.2
+peft=0.4.0
+pillow=9.4.0
+requests=2.31.0
+scipy=1.11.2
+torch=2.4.0
+torchvision=0.19.0
+transformers=4.31.0
