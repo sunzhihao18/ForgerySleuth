@@ -11,6 +11,8 @@ from PIL import Image
 
 from utils.utils import DEFAULT_IMAGE_TOKEN, IMAGE_TOKEN_INDEX
 
+from prompt.data_engine_prompt import DATA_ENGINE_PROMPT
+
 from model.forgery_analyst.llava.conversation import conv_templates
 from model.forgery_analyst.llava.utils import disable_torch_init
 from model.forgery_analyst.llava.model.builder import load_pretrained_model
@@ -79,16 +81,7 @@ def highlight_forgery_boundary(image_path, mask_path, thickness=5):
 def prepare_data(image_path, mask_path, manipulation_type='photoshop'):
     image = [highlight_forgery_boundary(image_path, mask_path)]
 
-    default_question = "You are a rigorous and responsible image tampering (altering) detection expert. " \
-        "You can localize the exact tampered region and analyze your detection decision according to tampering clues at different levels. " \
-        "Assuming that you have detected this is a <FAKE> image and the manipulation type is [MANIPULATION_TYPE], " \
-        "the exact tampered region boundary is highlighted with color in this image (and your detection IS correct).\n" \
-        "Please provide the chain-of-clues supporting your detection decision in the following style: " \
-        "# high-level semantic anomalies (such as content contrary to common sense, inciting and misleading content), " \
-        "# middle-level visual defects (such as traces of tampered region or boundary, lighting inconsistency, perspective relationships, and physical constraints) and " \
-        "# low-level pixel statistics (such as noise, color, textural, sharpness, and AI-generation fingerprint), " \
-        "where the high-level anomalies are significant doubts worth attention, and the middle-level and low-level findings are reliable evidence." 
-    
+    default_question = DATA_ENGINE_PROMPT
     question = default_question.replace('[MANIPULATION_TYPE]', manipulation_type)
     question = DEFAULT_IMAGE_TOKEN + '\n' + question
 
@@ -113,12 +106,12 @@ def main(args):
     if args.image_path and os.path.exists(args.image_path):
         image_path = args.image_path
     else:
-        input("Please enter the path to the image file: ")
+        image_path = input("Please enter the path to the image file: ")
     
     if args.mask_path and os.path.exists(args.mask_path):
         mask_path = args.mask_path
     else:
-        input("Please enter the path to the forgery mask file: ")
+        mask_path = input("Please enter the path to the forgery mask file: ")
     
     image, prompt = prepare_data(image_path, mask_path, args.manipulation_type)
 
