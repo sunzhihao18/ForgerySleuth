@@ -1,6 +1,6 @@
 # This file may be used to create an environment using:
 # $ conda create --name <env> --file <this file>
-# platform: linux-64
+
 accelerate=0.33.0
 deepspeed=0.14.5
 gradio=3.39.0

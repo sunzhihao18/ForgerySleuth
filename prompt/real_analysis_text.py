@@ -1,6 +1,5 @@
 
 REAL_ANALYSIS_TEXT_LIST = [
-    "This image is <REAL>, and no tampered regions are identified; therefore, [SEG] is not meaningful. " \
     "The following analysis affirms the authenticity of the image, with observations categorized into high-level semantic coherence, " \
     "middle-level visual consistency, and low-level pixel statistics.\n\n" \
     "# High-Level Semantic Coherence\n\n" \
@@ -22,7 +21,6 @@ REAL_ANALYSIS_TEXT_LIST = [
     "2. Homogeneous Texture and Sharpness\n\n" \
     "The texture and sharpness are evenly distributed, with no areas appearing artificially smoothed, grainy, or oversharpened.",
 
-    "This image is <REAL> with no tampered regions have been identified. Therefore, [SEG] is not relevant. " \
     "The following analysis supports the authenticity of the image, categorizing observations into high-level semantic coherence, " \
     "middle-level visual consistency, and low-level pixel statistics.\n\n" \
     "# High-Level Semantic Coherence\n\n" \
