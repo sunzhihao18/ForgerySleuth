@@ -92,5 +92,4 @@ If you find this project useful for your research and applications, please cite 
 
 ## Acknowledgment
 - This work is built upon the [LLaVA](https://github.com/haotian-liu/LLaVA), [LISA](https://github.com/dvlab-research/LISA) and [SAM](https://github.com/facebookresearch/segment-anything).
-- Ruirui Tu and Xu Han assisted with the data annotation, which significantly contributed to the development of the ForgeryAnalysis dataset.
 - In the process of dataset creation and model evaluation, we utilized [ChatGPT](https://platform.openai.com/docs/api-reference/introduction) and [ShareCaptioner](https://github.com/ShareGPT4Omni/ShareGPT4V).
